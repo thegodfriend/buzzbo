@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections;
 // System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,7 +7,7 @@ using USceneManager = UnityEngine.SceneManagement.SceneManager;
 
 namespace BuzzboMod
 {
-    internal class HiveKnightFinder : MonoBehaviour
+	internal class HiveKnightFinder : MonoBehaviour
     {
         
         private void Start()

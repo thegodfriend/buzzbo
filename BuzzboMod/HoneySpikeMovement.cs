@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using Logger = Modding.Logger;
+﻿using UnityEngine;
 using System.Collections;
 
 
 namespace BuzzboMod
 {
-    class HoneySpikeMovement : MonoBehaviour
+	class HoneySpikeMovement : MonoBehaviour
     {
 
         private Rigidbody2D rb;

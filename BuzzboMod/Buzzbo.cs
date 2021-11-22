@@ -24,9 +24,9 @@ namespace BuzzboMod
         public override void Initialize()
         {
             Log("Initializing Buzzbo test mod version " + GetVersion());
-            ModHooks.Instance.AfterSavegameLoadHook += AfterSaveGameLoad;
-            ModHooks.Instance.NewGameHook += AddFinderComponent;
-            ModHooks.Instance.LanguageGetHook += LanguageGet;
+            ModHooks.AfterSavegameLoadHook += AfterSaveGameLoad;
+            ModHooks.NewGameHook += AddFinderComponent;
+            ModHooks.LanguageGetHook += LanguageGet;
         }
 
 
@@ -49,10 +49,10 @@ namespace BuzzboMod
 
         }
 
-        private string LanguageGet(string key, string sheet)
+        private string LanguageGet(string key, string sheet, string orig)
         {
             
-            string text = Language.Language.GetInternal(key, sheet);
+            string text = orig;
             //Log("Key: " + key);
             //Log("Text: " + text);
             //return text;

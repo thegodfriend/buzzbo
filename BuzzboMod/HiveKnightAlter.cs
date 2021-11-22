@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 //using System.Threading.Tasks;
 using Modding;
-using ModCommon.Util;
 using UnityEngine;
 using Logger = Modding.Logger;
-using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using System.Collections;
+using FrogCore.Fsm;
 
 namespace BuzzboMod
 {
-    internal class HiveKnightAlter : MonoBehaviour
+	internal class HiveKnightAlter : MonoBehaviour
     {
         
         private HealthManager _hm;
@@ -40,7 +36,7 @@ namespace BuzzboMod
 
         private void Awake()
         {
-            ModHooks.Instance.LanguageGetHook += LanguageGet;
+            ModHooks.LanguageGetHook += LanguageGet;
 
             Modding.Logger.Log("Added Hive Knight Altering MonoBehaviour");
             
@@ -55,10 +51,10 @@ namespace BuzzboMod
 
         }
 
-        private string LanguageGet(string key, string sheet)
+        private string LanguageGet(string key, string sheet, string orig)
         {
 
-            string text = Language.Language.GetInternal(key, sheet);
+            string text = orig;
             //return text;
 
             switch (key)
@@ -342,7 +338,7 @@ namespace BuzzboMod
 
 
         private void OnDestroy() {
-            ModHooks.Instance.LanguageGetHook -= LanguageGet;
+            ModHooks.LanguageGetHook -= LanguageGet;
         }
 
     }
